@@ -643,6 +643,24 @@ body {
   padding: 30px;
   visibility: hidden;
 }
+
+.project-img {
+  overflow: hidden;
+  height: 250px; /* taille affichée */
+  border-radius: 15px;
+  position: relative;
+}
+
+.project-img .scroll-img {
+  width: 100%;
+  height: auto;
+  transition: transform 3s linear; /* duration of scroll */
+}
+
+.project-img:hover .scroll-img {
+  transform: translateY(calc(-100% + 250px)); /* -250px to scroll the image */
+}
+
 .projects .projects-items .projects-item:hover {
   background-position: right;
 }
@@ -656,23 +674,55 @@ body {
   flex-direction: column;
   gap: 20px 0;
 }
-.projects .projects-items .project-text h5 {
-  color: var(--main-color);
-  font-size: 20px;
-}
+
 .projects .projects-items .project-text h2 {
-  color: #c4cfde;
+  margin-top: 10px;
+  color: var(--main-color);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  text-align: justify;
+}
+.projects .projects-items .project-text h2 span {
+  color: #464646;
+  font-size: 16px;
 }
 .projects .projects-items .project-text a {
-  color: #c4cfde80;
-  text-align: end;
-  font-size: 20px;
+  width: fit-content;
+  border-radius: 40px;
+  padding: 0px 0px 0 20px;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
   text-transform: uppercase;
+  font-family: monospace;
+  border: 2px solid var(--main-color);
+  background: linear-gradient(to right, transparent 50%, var(--main-color) 50%)
+    left;
+  background-size: 200%;
+  transition: 0.5s ease-out;
   text-decoration: none;
-  transition: var(--main-transition);
 }
+
+.projects .projects-items .project-text p {
+  color: white;
+  text-align: justify;
+  font-family: system-ui;
+}
+
 .projects .projects-items .project-text a:hover {
-  color: var(--main-color);
+  background-position: right;
+  cursor: pointer;
+}
+.projects .projects-items .project-text a .fa-arrow-right {
+  background-color: var(--main-color);
+  border-radius: 40px;
+  width: 60px;
+  height: 40px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: var(--main-transition);
 }
 /* large */
 @media (max-width: 1200px) {
@@ -765,7 +815,9 @@ body {
 }
 .contact-me form {
   background: linear-gradient(145deg, #1d1e20, #101215);
-  box-shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e !important;
+  box-shadow:
+    10px 10px 19px #1c1e22,
+    -10px -10px 19px #262a2e !important;
   padding: 20px;
   border-radius: 30px;
   visibility: hidden;
@@ -809,7 +861,8 @@ body {
   font-size: 14px;
   font-family: "kanit", sans-serif;
   color: var(--main-color) !important;
-  box-shadow: 1px 4px 2px -3px rgba(0, 0, 0, 0.7) inset,
+  box-shadow:
+    1px 4px 2px -3px rgba(0, 0, 0, 0.7) inset,
     -1px -3px 3px -2px rgba(255, 255, 255, 0.2) inset !important;
   letter-spacing: 1px;
   transition: all 0.5s;
@@ -831,7 +884,8 @@ body {
   font-size: 14px;
   font-family: "kanit", sans-serif;
   color: var(--main-color) !important;
-  box-shadow: 1px 4px 2px -3px rgba(0, 0, 0, 0.7) inset,
+  box-shadow:
+    1px 4px 2px -3px rgba(0, 0, 0, 0.7) inset,
     -1px -3px 3px -2px rgba(255, 255, 255, 0.2) inset !important;
   letter-spacing: 1px;
   transition: all 0.5s;
@@ -847,7 +901,8 @@ body {
 .contact-me .contact-input input[type="submit"] {
   border-radius: 6px;
   background: linear-gradient(145deg, #1e2024, #23272b);
-  box-shadow: 1px 4px 2px -3px rgba(0, 0, 0, 0.7) inset,
+  box-shadow:
+    1px 4px 2px -3px rgba(0, 0, 0, 0.7) inset,
     -1px -3px 3px -2px rgba(255, 255, 255, 0.2) inset !important;
   text-transform: uppercase;
   position: relative;
